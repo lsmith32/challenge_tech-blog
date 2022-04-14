@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+  
+body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+    background-color:rgb(255, 239, 205)
+}
+  
+a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color .1s;
+}
+
+main {
+    flex: 1;
+    padding: 2% 4%;
+}
