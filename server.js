@@ -6,7 +6,15 @@ const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 const app = express();
 const PORT = process.env.PORT || 3006;
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+app.use(session({
+  resave:true,
+  saveUninitialized:true,
+  secret:process.env.secret,
+  cookie:{maxAge:3600000*24}
+}))
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

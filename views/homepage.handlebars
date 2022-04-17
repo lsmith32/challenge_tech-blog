@@ -1,0 +1,30 @@
+{{#if loggedIn}}
+    {{#each posts as |post|}}
+        <article class="post w3-margin-top">
+            <div class="title w3-blue-grey ">
+                <a href="/post/{{id}}">
+                    <div class="w3-container w3-padding-16 w3-text-light-grey">{{post.title}} 
+                        <span class="w3-right-align w3-text-light-grey" >(Posted by {{user.username}} at {{post.created_at}})</span>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <p class="w3-container">{{post.post_content}}</p>
+            </div>
+        </article>
+    {{/each}}
+{{/if}}
+{{#unless loggedIn}}
+    {{#each posts as |post|}}
+        <article class="post w3-margin-top">
+            <div class="title w3-blue-grey ">
+                <div class="w3-container w3-padding-16 w3-text-light-grey">{{post.title}} 
+                    <span class="w3-right-align w3-text-light-grey" >(Posted by {{user.username}} at {{post.created_at}})</span>
+                </div>
+            </div>
+            <div>
+                <p class="w3-container">{{post.post_content}}</p>
+            </div>
+        </article>
+    {{/each}}
+{{/unless}}

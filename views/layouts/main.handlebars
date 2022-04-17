@@ -13,13 +13,19 @@
     <nav>
         <div class="w3-bar w3-black">
             <a class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-mobile">Tech Blog</a>
+            {{#if loggedIn}}
             <a href="/feed" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-mobile">Feed</a>
             <a id="logout" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-mobile">Logout</a>
+            {{else}}
             <a href="/login" class="w3-bar-item w3-button w3-hover-none w3-text-grey w3-hover-text-white w3-mobile">Login</a>
         </div>
     </nav>
     <main>
         {{{ body }}}
     </main>
+    
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
 </body>
 </html>
